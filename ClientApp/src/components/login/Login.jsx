@@ -16,30 +16,42 @@ class Login extends React.Component {
   }
 
   getUserGames(userAccountId) {
-    const ownedGames = Ownership.filter( ownershipRecord => ownershipRecord.userAccountId === userAccountId);
-    const filteredGames = ownedGames.map(record => record.gameId);
-    const games = Games.filter(game => filteredGames.includes(game.gameId));
-    return games;
+    // Gets a list of gameIds associated with the users account
+    const userGameIds = Ownership
+                        .filter( ownershipRecord => ownershipRecord.userAccountId === userAccountId)
+                        .map(record => record.gameId);
+
+    // Filters through the Games datastore to match a gameID with a game
+    const ownedGames = Games
+                        .filter(game => userGameIds.includes(game.gameId));
+    return ownedGames;
   }
 
   async login(user) {
-    const userAccount = await Users.find( account => account.emailAddress === user.emailAddress && account.password === user.password);
-    if (userAccount !== undefined) {
+    try {
+      const userAccount = await Users
+                                  .find( account => account.emailAddress === user.emailAddress && account.password === user.password);
+      if (userAccount === undefined) {
+        throw Error("Login Failed, user not found");
+      };
+
       this.props.setUserAccount(userAccount);
+
       const games = this.getUserGames(userAccount.userAccountId);
       this.props.setUserGames(games);
+
+      // reset error message
       this.setState({error: ''});
       this.props.authenticateLogin(true);
     }
-    else {
-      this.setState({error: "Login failed, user not found"});
-
-    }
-  };
+    catch(error) {
+      this.setState({error: error.message});
+    };
+  }
 
   onChange = e => {
     this.setState({ [e.target.name]: e.target.value });
-  };
+  }
 
   onSubmit = e => {
     e.preventDefault();
@@ -49,17 +61,10 @@ class Login extends React.Component {
       password : this.state.password
     };
 
-    try {
-      this.login(user);
-    }
-    catch(err) {
-      this.setState({error: err})
-    }
-  };
+    this.login(user);
+  }
 
   render() {
-    const { loggedIn } = this.props;
-
     return (
       <div className="login-container">
         <form onSubmit={this.onSubmit}>
@@ -86,8 +91,7 @@ class Login extends React.Component {
             <button type="submit" className="button">
               Log in
             </button>
-            {loggedIn}
-          {this.state.error && <p className="error-message">{this.state.error}</p>}
+            {this.state.error && <p className="error-message">{this.state.error}</p>}
           </div>
         </form>
       </div>

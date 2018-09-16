@@ -10,7 +10,7 @@ export default class App extends Component {
     this.state = {
       loggedIn: false,
       user: {},
-      games: []
+      games: [],
     };
   }
 
