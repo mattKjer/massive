@@ -33,5 +33,7 @@ With this in mind I didn't want to repeat my mistake. I completely forwent devel
 * Learning c# would have been fun.
 
 ## Process ##
-I wanted to use as little boilerplate and boostrapping as possible, I also wanted to show modular coding practices, linting, 
+While I knew that I wouldn't be able to get everything done, my main priority was to demonstrate clean, readable and reusable code. 
+
+
 
