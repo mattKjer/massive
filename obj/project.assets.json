@@ -11507,11 +11507,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/mattkiernander/Documents/WebDev/my-new-app/my-new-app.csproj",
+      "projectUniqueName": "/Users/mattkiernander/massive/my-new-app.csproj",
       "projectName": "my-new-app",
-      "projectPath": "/Users/mattkiernander/Documents/WebDev/my-new-app/my-new-app.csproj",
+      "projectPath": "/Users/mattkiernander/massive/my-new-app.csproj",
       "packagesPath": "/Users/mattkiernander/.nuget/packages/",
-      "outputPath": "/Users/mattkiernander/Documents/WebDev/my-new-app/obj/",
+      "outputPath": "/Users/mattkiernander/massive/obj/",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"

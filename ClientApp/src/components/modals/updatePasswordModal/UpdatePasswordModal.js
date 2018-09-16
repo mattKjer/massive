@@ -8,6 +8,7 @@ import {
   FormGroup,
   Input,
 } from 'reactstrap';
+import '../Modals.css';
 
 class UpdatePasswordModal extends Component {
   constructor(props) {
@@ -100,7 +101,7 @@ class UpdatePasswordModal extends Component {
                     minLength="6"
                     required
                   />
-                {this.state.response && <p>{this.state.response}</p>}
+                {this.state.response && <p className="response">{this.state.response}</p>}
                 <Button color="dark" style={{ marginTop: '2rem' }} block>
                   Update
                 </Button>

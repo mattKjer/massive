@@ -9,7 +9,7 @@ import {
   Input,
 } from 'reactstrap';
 import PropTypes from 'prop-types';
-import './updateDetailsModal.css';
+import '../Modals.css';
 
 class UpdateDetailsModal extends Component {
   constructor(props) {
