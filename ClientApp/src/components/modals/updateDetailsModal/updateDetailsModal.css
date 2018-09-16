@@ -1,0 +1,13 @@
+input:invalid {
+  box-shadow: 0 0 5px 1px red;
+}
+
+input:focus:invalid {
+  outline: none;
+}
+
+.response {
+  text-align: center;
+  margin: 5px;
+  box-shadow: 0 0 5px 1px grey;
+}

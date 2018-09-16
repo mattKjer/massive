@@ -1,0 +1,13 @@
+.wrapper {
+    display: grid;
+    grid-gap: 20px;
+    background-image: url('./assets/images/ubisoft-background.png');
+    background-repeat: repeat-y;
+    padding: 20px;
+}
+
+@media (min-width: 768px) {
+    .wrapper {
+        padding: 40px;
+    }
+}

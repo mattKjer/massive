@@ -1,0 +1,35 @@
+.login-container {
+  display: grid;
+  min-height: 100vh;
+  justify-items: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.login {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-gap: 20px;
+  border: .1rem solid black;
+  border-radius: .5rem;
+  margin: 1rem;
+  font-size: 13px;
+  padding: 1rem .5rem;
+  text-align: center;
+  color: grey;
+  background: white;
+}
+
+.form-control {
+  color: #3d61ad;
+}
+
+button {
+  background: #ffdb00;
+  border: 0;
+  padding: 10px 20px;
+}
+
+.error-message {
+  color: crimson;
+}

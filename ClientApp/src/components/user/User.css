@@ -1,0 +1,43 @@
+
+.user {
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  grid-auto-rows: auto;
+  grid-gap: 10px;
+  align-items: center;
+  color: black;
+  grid-template-areas: 
+  "description user-details"
+  "update-details update-details";
+  padding-top: 15px;
+  font-weight: 100;
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.update-details {
+  grid-area: update-details;
+  padding-left: 15px;
+}
+
+.user-details {
+  grid-area: user-details;
+}
+
+.description {
+  grid-area: description;
+  padding-left: 20px;
+}
+
+@media (min-width: 768px) {
+  .user {
+    grid-template-areas: 
+  "description user-details"
+  "description update-details";
+  }
+
+  .update-details {
+    padding-left: 0px;
+  }
+}
+
