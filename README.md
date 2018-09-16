@@ -52,6 +52,8 @@ The project was perfectly manageable, and i'm confident that if I had more time 
 
 I started with the login page, mocking calls to display an incorrect login and a successful login so I wouldn't be blocked developing the user form page. 
 
+Note - I had to put some backend logic into the frontend, such as associating a an ownership entity with the actual game entities.
+
 I decided to keep the data and models in the front end and work with them as if I had made an API call. When I had the time to implement a backend I could just integrate the api calls. 
 
 Built out the games component to map over the returned 'owned games' and display them in a mobile first manner.
